@@ -8,28 +8,24 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     }
     return to.concat(ar || Array.prototype.slice.call(from));
 };
-var random_1 = require("@santi100/random-lib/cjs/random");
-/**
- * Shuffles the elements of an array randomly.
- *
- * @param array - The array to be shuffled.
- * @param opts - Optional parameters for shuffling.
- * @param opts.inPlace - If true, shuffles the array in place. Default is false.
- * @returns The shuffled array.
- */
+var random = require("@santi100/random-lib/cjs/random");
+var assertArray = require("@santi100/assertion-lib/cjs/array");
+var assertTypeOf = require("@santi100/assertion-lib/cjs/type-of");
 function shuffle(array, opts) {
     var _a, _b;
     if (opts === void 0) { opts = { inPlace: false }; }
+    assertArray(array, 'array');
+    assertTypeOf(opts.inPlace, 'boolean', 'opts.inPlace');
     if (opts.inPlace) {
         for (var i = array.length - 1; i > 0; i--) {
-            var j = (0, random_1.random)(i + 1);
+            var j = random(i + 1);
             _a = [array[j], array[i]], array[i] = _a[0], array[j] = _a[1]; // Swap elements
         }
         return array; // Return the shuffled array (optional)
     }
     var shuffledArray = __spreadArray([], array, true); // Create a shallow copy of the array
     for (var i = shuffledArray.length - 1; i > 0; i--) {
-        var j = (0, random_1.random)(i + 1);
+        var j = random(i + 1);
         _b = [shuffledArray[j], shuffledArray[i]], shuffledArray[i] = _b[0], shuffledArray[j] = _b[1]; // Swap elements
     }
     return shuffledArray; // Return the new shuffled array

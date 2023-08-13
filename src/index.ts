@@ -1,17 +1,33 @@
-import { random } from '@santi100/random-lib/cjs/random';
+import random = require('@santi100/random-lib/cjs/random');
+import assertArray = require('@santi100/assertion-lib/cjs/array');
+import assertTypeOf = require('@santi100/assertion-lib/cjs/type-of');
 
 /**
  * Shuffles the elements of an array randomly.
  * 
- * @param array - The array to be shuffled.
- * @param opts - Optional parameters for shuffling.
- * @param opts.inPlace - If true, shuffles the array in place. Default is false.
+ * @param array The array to be shuffled.
  * @returns The shuffled array.
  */
+function shuffle<T = unknown>(array: T[]): T[];
+
+/**
+ * Shuffles the elements of an array randomly.
+ * 
+ * @param array The array to be shuffled.
+ * @param opts Optional parameters for shuffling.
+ * @param opts.inPlace If true, shuffles the array in place. Default is false.
+ * @returns The shuffled array.
+ */
+function shuffle<T = unknown>(array: T[], opts: { inPlace: boolean; }): T[];
+
+
 function shuffle<T = unknown>(
 	array: T[],
 	opts: { inPlace: boolean } = { inPlace: false }
 ): T[] {
+	assertArray(array, 'array');
+	assertTypeOf(opts.inPlace, 'boolean', 'opts.inPlace');
+
 	if (opts.inPlace) {
 		for (let i = array.length - 1; i > 0; i--) {
 			const j = random(i + 1);

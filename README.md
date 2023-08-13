@@ -23,6 +23,7 @@
 ## What's this?
 
 This library exports a function that shuffles the values in any array.
+It is implemented using the [Fisher-Yates shuffle algorithm](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle) to shuffle the array elements.
 
 ## Installation
 
@@ -34,12 +35,21 @@ This library exports a function that shuffles the values in any array.
 
 - `function shuffle<T = unknown>(array: T[]): T[];`
 
-| Name         | Type      | Description                           | Optional? | Default              |
-| ------------ | --------- | ------------------------------------- | --------- | -------------------- |
-| array        | `T[]`     | The array to be shuffled.             | No        | _N/A_                |
-| opts         | `object`  | Optional parameters for shuffling.    | Yes       | `{ inPlace: false }` |
-| opts.inPlace | `boolean` | If true, shuffles the array in place. | Yes       | `false`              |
-| returns      | `T[]`     | The shuffled array.                   | No        | _N/A_                |
+  | Name         | Type      | Description                           | Optional? | Default              |
+  | ------------ | --------- | ------------------------------------- | --------- | -------------------- |
+  | array        | `T[]`     | The array to be shuffled.             | No        | _N/A_                |
+
+  Returns the shuffled array.
+
+- `function shuffle<T = unknown>(array: T[], opts: { inPlace: boolean; }): T[];`
+
+  | Name         | Type      | Description                           | Optional? | Default              |
+  | ------------ | --------- | ------------------------------------- | --------- | -------------------- |
+  | array        | `T[]`     | The array to be shuffled.             | No        | _N/A_                |
+  | opts         | `object`  | Optional parameters for shuffling.    | Yes       | `{ inPlace: false }` |
+  | opts.inPlace | `boolean` | If true, shuffles the array in place. | Yes       | `false`              |
+
+  Returns the shuffled array.
 
 ## Usage
 
