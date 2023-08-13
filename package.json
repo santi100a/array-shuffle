@@ -1,5 +1,5 @@
 {
-  "name": "@author/package",
+  "name": "@santi100/array-shuffle",
   "version": "0.0.1",
   "main": "cjs/index.js",
   "module": "index.js",
@@ -18,11 +18,16 @@
     "remark-validate-links": "^12.1.1",
     "typescript": "^4.9.5"
   },
-  "author": "",
-  "description": "",
-  "keywords": [],
+  "author": "santi100a <santyrojasprieto9+npmauthor@gmail.com>",
+  "description": "Santi's Array Shuffling Library: Shuffle it up!",
+  "keywords": ["santi100", "shuffle", "array", "es3", "lightweight", "portable"],
   "repository": {
-    "url": "https://github.com/<author>/<repo>"
+    "url": "https://github.com/santi100a/array-shuffle",
+    "type": "git"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/santi100a"
   },
   "scripts": {
     "build": "tsc",
@@ -37,5 +42,8 @@
     "check-links": "remark --frail .",
     "postbuild": "yarn esm-wrapper",
     "prepublishOnly": "yarn validate-package-json"
+  },
+  "dependencies": {
+    "@santi100/random-lib": "^1.1.6"
   }
 }

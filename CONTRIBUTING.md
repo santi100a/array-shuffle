@@ -2,9 +2,9 @@
 
 ## How to contribute
 
-You can [file an issue](https://github.com/<author>/<repo>/issues)
-or a [pull request](https://github.com/<author>/<repo>/pulls).
-You can also [start a discussion](https://github.com/<author>/<repo>/discussions).
+You can [file an issue](https://github.com/santi100a/array-shuffle/issues)
+or a [pull request](https://github.com/santi100a/array-shuffle/pulls).
+You can also [start a discussion](https://github.com/santi100a/array-shuffle/discussions).
 
 ## Contribution rules
 
